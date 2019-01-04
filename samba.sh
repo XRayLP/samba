@@ -105,6 +105,10 @@ share() { local share="$1" path="$2" browsable="${3:-yes}" ro="${4:-yes}" \
     echo "   browsable = $browsable" >>$file
     echo "   read only = $ro" >>$file
     echo "   guest ok = $guest" >>$file
+    echo "   force user = smbuser" >>$file
+    echo "   force group = users" >>$file
+    echo "   create mask = 0664" >>$file
+    echo "   directory mask = 0775" >>$file
     echo -n "   veto files = /._*/.apdisk/.AppleDouble/.DS_Store/" >>$file
     echo -n ".TemporaryItems/.Trashes/desktop.ini/ehthumbs.db/" >>$file
     echo "Network Trash Folder/Temporary Items/Thumbs.db/" >>$file
